@@ -1,0 +1,11 @@
+@import '../../src/styles/_vars.scss';
+
+.docs {
+  background-color: var(--color-neutral-0);
+  color: var(--color-neutral-6);
+  padding: var(--space-300) 0;
+
+  &__lead {
+    font-size: var(--font-size-lg);
+  }
+}

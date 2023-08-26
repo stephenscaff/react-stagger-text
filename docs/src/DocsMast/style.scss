@@ -1,0 +1,36 @@
+@import '../../src/styles/_vars.scss';
+
+.mast {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40em;
+  max-height: 100vh;
+  padding: 8em 0;
+  color: #fff;
+  background-color: var(--theme-bg);
+  color: var(--theme-fg);
+
+  @media (min-width: 32em) {
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  &__pretitle {
+    display: block;
+    margin-bottom: var(--space-100);
+  }
+
+  &__title {
+    font-size: var(--font-size-xl-3);
+    line-height: 1.25;
+
+    @media (min-width: $mq-md) {
+      font-size: var(--font-size-xl-4);
+    }
+  }
+
+  &__eyes {
+    width: 5em;
+  }
+}
