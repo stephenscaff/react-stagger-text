@@ -89,6 +89,16 @@ main {
 h1,
 h2,
 h3,
-h4 {
-  font-weight: 400;
+h4,
+h5 {
+  font-weight: 600;
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-code);
 }

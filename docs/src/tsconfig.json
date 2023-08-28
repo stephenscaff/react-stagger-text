@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
+    "moduleResolution": "nodenext",
+    "target": "es2015",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "module": "esnext",
+    "allowJs": true
   }
 }

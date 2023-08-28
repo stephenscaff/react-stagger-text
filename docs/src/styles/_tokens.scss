@@ -1,13 +1,13 @@
 :root {
-  --font-sans: 'Fig Tree', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-sans: 'DM Sans', 'Helvetica Neue', Helvetica, sans-serif;
   --font-mono: 'DM Mono', 'Andale Mono', monospace;
 
   // font sizes
   --font-size-xs-2: 0.7em;
   --font-size-xs: 0.8em;
   --font-size-sm: 0.95em;
-  --font-size-md: 1em;
-  --font-size-lg: 1.15em;
+  --font-size-md: 1.15em;
+  --font-size-lg: 1.35em;
   --font-size-xl: 1.5em;
   --font-size-xl-2: 2.4em;
   --font-size-xl-3: 2.75em;
@@ -23,14 +23,22 @@
   --color-neutral-2: #a7a6a6;
   --color-neutral-3: #999;
   --color-nuetral-4: #28282c;
-  --color-neutral-5: #1e1e21;
-  --color-neutral-6: #171719;
-  --color-light-2: rgba(255, 255, 255, 0.25);
-  --color-light-5: rgba(255, 255, 255, 0.5);
-  --color-blue: rgba(152, 192, 246, 0.75);
+  --color-neutral-5: #28231c;
+  --color-neutral-6: #070707;
+
+  --color-accent-1: #0abeff;
+  --color-accent-2: #fdf1ed;
+  --color-accent-3: #ffcf99;
+
+  --color-code: var(--color-accent-2);
+  --color-code-background: var(--color-neutral-5);
+  --color-text: var(--color-neutral-6);
+  --color-text-light: var(--color-accent-2);
+  --color-link: var(--color-accent-1);
+  --color-background: var(--color-neutral-5);
+
   // aliases
-  --color-white: var(--color-neutral-0);
-  --color-dark: var(--color-neutral-6);
+
   --color-borders-light: var(--color-light-2);
 
   // spacing
@@ -65,7 +73,7 @@
   --app-header-height: 4em;
   --app-header-height--: calc(var(--app-header-height) * -1);
 
-  --grid-max-width: 49em;
+  --grid-max-width: 52em;
   --grid-outer-gutter: 1em;
 
   @media (min-width: $mq-md) {

@@ -8,8 +8,8 @@
   max-height: 100vh;
   padding: 8em 0;
   color: #fff;
-  background-color: var(--theme-bg);
-  color: var(--theme-fg);
+  background-color: var(--color-background);
+  color: var(--color-text-light);
 
   @media (min-width: 32em) {
     height: 100vh;
@@ -18,7 +18,10 @@
 
   &__pretitle {
     display: block;
+    font-weight: 600;
+    font-size: var(--font-size-md);
     margin-bottom: var(--space-100);
+    color: var(--color-accent-3);
   }
 
   &__title {
@@ -32,5 +35,11 @@
 
   &__eyes {
     width: 5em;
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-active {
+      opacity: 1;
+    }
   }
 }

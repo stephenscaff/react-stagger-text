@@ -9,9 +9,8 @@ StaggerText is React component for creating staggered text animations, by word o
 3. [🤖 Commands](#-commands)
 4. [🧬 Options](#-options)
 5. [🕹️ Usage](#-usage)
-6. [🎨 Cursor Types](#-cursor-types)
-7. [📓 Notes](#-notes)
-8. [📅 To Dos](#-to-dos)
+6. [📓 Notes](#-notes)
+7. [📅 To Dos](#-to-dos)
 
 <br/>
 
@@ -105,24 +104,6 @@ function SomeText(title) {
 
 ## 🧬 Options
 
-staggerType?: 'word' | 'letter'
-startDelay?: number
-staggerDuration?: number
-staggerDelay?: number
-easing?: string
-hasInlineBlockWrapper?: boolean
-shouldAnimate?: boolean
-onTransitionComplete?: () => void
-children: string
-
-staggerType = 'word',
-shouldAnimate = false,
-startDelay = 0,
-staggerDuration = 0.5,
-staggerDelay = 0.05,
-easing = 'ease-in',
-hasInlineBlockWrapper = false,
-
 <!-- prettier-ignore -->
 | Option | Type | Description      | Default |
 | ----   | ---- | -------- | -------|
@@ -181,7 +162,6 @@ hasInlineBlockWrapper = false,
 ### Stagger with callback
 
 ```
-on
 
 <StaggerText
   staggerDuration={1}
@@ -189,6 +169,35 @@ on
 >
   {title}
 </StaggerText>
+```
+
+### Sequentially stagger multiple instances
+
+```
+const StaggeredTextLines: React.FC<Props> = (lines) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const handleStaggerComplete = () => {
+    setCurrentIndex((prevIndex) => prevIndex + 1)
+  }
+  return (
+    {lines.map((line, index) => (
+      <StaggerText
+        key={index}
+        onStaggerComplete={
+          index === currentIndex ? handleStaggerComplete : null
+        }
+        shouldStart={index === currentIndex}
+        startDelay={line.startDelay}
+        staggerType={line.staggerType}
+        staggerDuration={line.staggerDuration}
+        staggerDelay={line.staggerDelay}
+      >
+        {line.title}
+      </StaggerText>
+    }
+  )
+}
 ```
 
 <br/>

@@ -1,16 +1,14 @@
 import { ReactNode } from 'react'
 import './style.scss'
 
-interface DemoDocsProps {
+interface DocsProps {
   children: ReactNode
 }
 
-function DemoDocs({ children }: DemoDocsProps) {
-  return (
-    <section className="docs">
-      <div className="grid">{children}</div>
-    </section>
-  )
-}
+const Docs: React.FC<DocsProps> = ({ children }) => (
+  <section className="docs">
+    <div className="grid">{children}</div>
+  </section>
+)
 
-export default DemoDocs
+export default Docs
