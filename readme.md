@@ -2,6 +2,10 @@
 
 StaggerText is React component for creating staggered text animations, by word or letter, when text enters viewport.
 
+[Docs / Demo](https://stephenscaff.github.io/react-stagger-text/)
+
+<br/>
+
 ## Contents
 
 1. [📌 Features](#-features)
