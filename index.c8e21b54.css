@@ -1,0 +1,21 @@
+
+
+.xK4TwG_mast {
+  color: var(--theme-fg);
+  background-color: var(--theme-bg);
+  align-items: center;
+  height: 40em;
+  max-height: 100vh;
+  padding: 8em 0;
+  display: flex;
+  position: relative;
+}
+
+@media (width >= 32em) {
+  .xK4TwG_mast {
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+/*# sourceMappingURL=index.c8e21b54.css.map */
