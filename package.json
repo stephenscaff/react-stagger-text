@@ -30,7 +30,7 @@
     "docs:clean": "rm -rf ./docs/dist",
     "docs:start": "parcel ./docs/src/index.html --dist-dir ./docs/dist",
     "docs:build": "parcel build ./docs/src/index.html --dist-dir ./docs/dist --public-url ./",
-    "docs:deploy": "npm run demo:build && gh-pages -d ./docs/dist",
+    "docs:deploy": "npm run docs:build && gh-pages -d ./docs/dist",
     "prepare": "npm run build",
     "prepublish": "rm -rf ./dist && npm run build",
     "lint": "eslint \"src/**/*.+(ts|tsx)\" --fix ",
