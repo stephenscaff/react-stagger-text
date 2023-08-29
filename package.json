@@ -1,6 +1,6 @@
 {
   "name": "react-stagger-text",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React TS component for creating staggered text animation by word or letters, when in viewport",
   "author": "Stephen Scaff <stephenscaff.com>",
   "homepage": "https://stephenscaff.github.io/react-stagger-text/",
