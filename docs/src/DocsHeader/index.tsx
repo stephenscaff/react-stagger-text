@@ -4,7 +4,10 @@ import './style.scss'
 const DocsHeader = () => (
   <section className="docs-header">
     <div className="docs-header__grid">
-      <a className="docs-header__brand" href="/">
+      <a
+        className="docs-header__brand"
+        href="https://stephenscaff.github.io/react-stagger-text"
+      >
         <StaggerText staggerType="letter">StaggerText</StaggerText>
       </a>
       <a
