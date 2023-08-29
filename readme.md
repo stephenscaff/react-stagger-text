@@ -83,9 +83,9 @@ On build, `src` populates `dist` with commonjs, es, umd versions of the componen
 <!-- prettier-ignore -->
 | Option | Type | Description      | Default |
 | ----   | ---- | -------- | -------|
-| `shouldStart`    | `boolean`  | If animation should start | `true` |
-| `startTreshold`    | `number`  | Intersection Observer value between 0 and 1 representing the percentage component must be visible before stagger starts. | `0.1` |
-| `startDelay`      | `number` | Delay before animation starts  | `0` |
+| `shouldStart`    | `boolean`  | Flag that stars stagger transition/animation | `true` |
+| `startTreshold`    | `number`  | Intersection Observer value between 0 and 1 representing the percentage component must be visible before stagger animation starts. | `0.1` |
+| `startDelay`      | `number` | Delay before stagger animation starts  | `0` |
 | `staggerType`    | `'word' \| 'letter'`  | Defines if stagger animation is by word or letter | `word` |
 | `staggerDuration` | `number` | Duration of animation | `0.5` |
 | `staggerDelay`  | `number` | Delay between staggers | `0.05` |

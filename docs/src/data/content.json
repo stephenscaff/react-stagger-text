@@ -44,25 +44,32 @@
     "title": "🧬 Options",
     "optionsTable": [
       {
-        "id": "start_threshold",
+        "id": "shouldStart",
+        "option": "<code>shouldStart</code>",
+        "type": "<code>boolean</code>",
+        "description": "Flag that starts stagger transition/animation",
+        "default": "<code>true</code>"
+      },
+      {
+        "id": "startTreshold",
         "option": "<code>startTreshold</code>",
         "type": "<code>number</code>",
         "description": "Intersection Observer value between 0 and 1 representing the percentage component must be visible before stagger starts.",
         "default": "<code>0.1</code>"
       },
       {
-        "id": "stagger_type",
-        "option": "<code>staggertype</code>",
+        "id": "startDelay",
+        "option": "<code>startDelay</code>",
+        "type": "<code>number</code>",
+        "description": "Delay before stagger animation starts",
+        "default": "<code>0</code>"
+      },
+      {
+        "id": "staggerType",
+        "option": "<code>staggerType</code>",
         "type": "<code>'word' | 'letter'</code>",
         "description": "Defines if stagger animation is by word or letter",
         "default": "<code>word</code>"
-      },
-      {
-        "id": "start_delay",
-        "option": "<code>startdelay</code>",
-        "type": "<code>number</code>",
-        "description": "Delay before animation starts",
-        "default": "<code>0</code>"
       },
       {
         "id": "staggerDuration",
@@ -91,13 +98,6 @@
         "type": "<code>boolean</code>",
         "description": "Adds 'inline-block' display to wrapping element",
         "default": "<code>false</code>"
-      },
-      {
-        "id": "shouldAnimate",
-        "option": "<code>shouldAnimate</code>",
-        "type": "<code>boolean",
-        "description": "Starts animation</code>",
-        "default": "<code>true</code>"
       },
       {
         "id": "onStaggerComplete",
