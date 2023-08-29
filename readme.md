@@ -37,22 +37,22 @@ StaggerText is React component for creating staggered text animations, by word o
 
 `npm i react-stagger-text`
 
-### Add to you project
-
-Add to a global location, like `_app.js`
+### Use that thing
 
 ```
-import React from "react";
-import AnimatedCursor from "react-stagger-text"
+import StaggerText from "react-stagger-text"
 
-export default function App() {
+function SomeComponent() {
   return (
-    <div className="App">
-      <h1>
-        <StaggerText>This text will be staggered in all sexy like<StaggerText>
-      </h1>
-    </div>
-  );
+    <h1>
+      <StaggerText
+        staggerDuration={0.7}
+        staggerDelay={0.09}
+      >
+        This text will be staggered by word
+      </StaggerText>
+    </h1>
+  )
 }
 ```
 
@@ -67,7 +67,7 @@ export default function App() {
 **Demo Build**: `npm run demo:build` <br/>
 **Demo Clean**: `npm run demo:clean` <br/>
 
-### Demo
+### Docs/Dev
 
 The demo is bundled with [`Parcel.js`](https://parceljs.org/) and served up at [http://localhost:1234/](http://localhost:1234/).
 
@@ -83,17 +83,15 @@ On build, `src` populates `dist` with commonjs, es, umd versions of the componen
 import React from "react";
 import StaggerText from "react-stagger-text"
 
-
 function SomeText(title) {
   return (
     <section className="mast">
       <h1 className="mast__title">
         <StaggerText
-          byWord={true}
-          staggerDuration={1}
-          shouldAnimate={true}
+          staggerType="letter"
+          staggerDuration={0.7}
+          staggerDelay={0.09}
           startDelay={10}
-          onTransitionComplete={handleAnimationEnd}
         >
           {title}
         </StaggerText>
@@ -111,13 +109,14 @@ function SomeText(title) {
 <!-- prettier-ignore -->
 | Option | Type | Description      | Default |
 | ----   | ---- | -------- | -------|
-| `staggerTyle`    | `'word' \| 'letter'`  | Defines if stagger animation is by word or letter | `word` |
+| `shouldStart`    | `boolean`  | If animation should start | `true` |
+| `startTreshold`    | `number`  | Amount in Viewport treshold (a la Intersection Observer) | `0.1` |
+| `staggerType`    | `'word' \| 'letter'`  | Defines if stagger animation is by word or letter | `word` |
 | `startDelay`      | `number` | Delay before animation starts  | `0` |
 | `staggerDuration` | `number` | Duration of animation | `0.5` |
 | `staggerDelay`  | `number` | Delay between staggers | `0.05` |
 | `staggerEasing` | `string` | Custom easing to stagger transition-based animation  | `ease-in` |
 | `hasInlineBlockWrapper` | `boolean` | Adds `inline-block` display to wrapping element    | `false`  |
-| `shouldAnimate` | `boolean` | Starts animation  | `true`  |
 | `onTransitionComplete`  | `() => void` | Callback when stagger animation fully completes  | `void` |
 | `children` | `sring` | React children for providing text as string  | `null` |
 
@@ -143,9 +142,9 @@ function SomeText(title) {
 ```
 <StaggerText
   staggerType='letter'
-  staggerDuration={1}
+  staggerDuration={0.9}
   shouldAnimate={true}
-  startDelay={100}
+  startDelay={500}
 >
  Let's go ahead and stagger this by letter.
 </StaggerText>
@@ -166,16 +165,19 @@ function SomeText(title) {
 ### Stagger with callback
 
 ```
+const handleStaggerEnd = () => {
+  console.log('sup, i'm dun')
+}
 
 <StaggerText
   staggerDuration={1}
   onStaggerComplete={handleStaggerEnd}
 >
-  {title}
+  Stagger this text, then let em know
 </StaggerText>
 ```
 
-### Sequentially stagger multiple instances
+### Sequentially stagger multiple instances with callback and shouldStart
 
 ```
 const StaggeredTextLines: React.FC<Props> = (lines) => {
@@ -184,6 +186,7 @@ const StaggeredTextLines: React.FC<Props> = (lines) => {
   const handleStaggerComplete = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1)
   }
+
   return (
     {lines.map((line, index) => (
       <StaggerText
