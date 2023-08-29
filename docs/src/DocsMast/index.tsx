@@ -30,7 +30,10 @@ const DocsMast: React.FC<DocsMastProps> = ({ pretitle, lines }) => {
     <section className="mast">
       <div className="grid">
         <header className="mast__header">
-          <div className="mast__pretitle">{pretitle}</div>
+          <div className="mast__pretitle">
+            {' '}
+            <StaggerText staggerType="letter">{pretitle}</StaggerText>
+          </div>
           <h1 className="mast__title">
             {lines.map((line, index) => (
               <StaggerText

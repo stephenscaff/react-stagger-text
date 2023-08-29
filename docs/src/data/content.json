@@ -1,6 +1,6 @@
 {
   "mast": {
-    "pretitle": "React StaggerText",
+    "pretitle": "Howdie!",
     "lines": [
       {
         "title": "StaggerText is a React Component for creating staggered text animations when the text is in viewport. Animations can run by word, like this sentence.",
@@ -43,6 +43,13 @@
     "id": "options",
     "title": "🧬 Options",
     "optionsTable": [
+      {
+        "id": "start_threshold",
+        "option": "<code>startTreshold</code>",
+        "type": "<code>number</code>",
+        "description": "Intersection Observer value between 0 and 1 representing the percentage component must be visible before stagger starts.",
+        "default": "<code>0.1</code>"
+      },
       {
         "id": "stagger_type",
         "option": "<code>staggertype</code>",
@@ -121,8 +128,8 @@
         "content": "<p>For smoother, less chopy transitions, favor longer <code>staggerDuration</code> and shorter <code>staggerDelay</code>. For example, <code>StaggerDuration={0.7} StaggerDelay={0.09}</code> provides a nice smooth effect by word. Perhaps reduce the duration a tad for letters.</p>"
       },
       {
-        "title": "Best for titles",
-        "content": "<p>While you can apply this effect to any type of text, titles and larger text is probs best.</p>"
+        "title": "Stagger a series of lines sequentially",
+        "content": "<p>The stagger a series of lines, wrap each line in a component instances and leverage the <code>onStaggerComplete</code> callback and <code>shouldStart</code> prop. Ideally, you can do this dynamically with some data defining your text and prop config and <code>useState</code>. See a complete example above.</p>"
       }
     ]
   },
@@ -133,6 +140,7 @@
         "<s>Add callback for when stagger completes</s>",
         "<s>Add option for controling start of stagger</s>",
         "Maybe remove span wrappers from dom once stagger completes?",
+        "Maybe provide a method for restarting or even rewinding transitions?",
         "Provide addition animationType that slices text into view via translateY"
     ]
   }

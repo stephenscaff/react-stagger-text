@@ -1,0 +1,67 @@
+@import '../../src/styles/_vars.scss';
+@import '../../src/styles/_tools.scss';
+
+@mixin nth-ani-delay($delay_items: 7, $delay_time: 0.2s) {
+  @for $i from 1 through $delay_items {
+    &:nth-child(#{$i}) {
+      animation-delay: $delay_time * $i;
+    }
+  }
+}
+
+.docs-header {
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background);
+  color: var(--color-text-light);
+
+  &__grid {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 95%;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    color: var(--color-accent-3);
+    font-weight: 600;
+    cursor: pointer;
+    @include font-sizer(var(--font-size-sm), $md: var(--font-size-md));
+
+    &:hover span {
+      animation: fade-in 0.4s ease both;
+      @include nth-ani-delay(11, 0.1s);
+    }
+  }
+
+  &__link {
+    width: 24px;
+    line-height: 1;
+    align-self: center;
+
+    &-icon {
+      fill: #fff;
+      transition: fill 0.5s ease;
+    }
+
+    &:hover &-icon {
+      fill: var(--color-accent-3);
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

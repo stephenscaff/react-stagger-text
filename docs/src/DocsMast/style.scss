@@ -1,4 +1,5 @@
 @import '../../src/styles/_vars.scss';
+@import '../../src/styles/_tools.scss';
 
 .mast {
   position: relative;
@@ -6,7 +7,6 @@
   align-items: center;
   max-height: 100vh;
   padding: var(--space-400) 0;
-  color: #fff;
   background-color: var(--color-background);
   color: var(--color-text-light);
 
@@ -25,12 +25,8 @@
   }
 
   &__title {
-    font-size: var(--font-size-xl-2);
     line-height: 1.25;
-
-    @media (min-width: $mq-md) {
-      font-size: var(--font-size-xl-4);
-    }
+    @include font-sizer(var(--font-size-xl-2), $md: var(--font-size-xl-4));
   }
 
   &__eyes {

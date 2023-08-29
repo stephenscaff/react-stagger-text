@@ -3,13 +3,13 @@
   --font-mono: 'DM Mono', 'Andale Mono', monospace;
 
   // font sizes
-  --font-size-xs-2: 0.7em;
+  --font-size-xs-2: 0.85em;
   --font-size-xs: 0.9em;
   --font-size-sm: 1em;
   --font-size-md: 1.15em;
   --font-size-lg: 1.35em;
   --font-size-xl: 1.5em;
-  --font-size-xl-2: 2.15em;
+  --font-size-xl-2: 2.05em;
   --font-size-xl-3: 2.75em;
   --font-size-xl-4: 3em;
 
@@ -69,14 +69,13 @@
   --ease-3: cubic-bezier(0.77, 0, 0.175, 1);
   --ease-4: cubic-bezier(0.58, 0.3, 0.005, 1);
 
-  --app-header-height-sm: 4em;
-  --app-header-height: 4em;
-  --app-header-height--: calc(var(--app-header-height) * -1);
+  --header-height: 3em;
+  --header-height--: calc(var(--app-header-height) * -1);
 
   --grid-max-width: 52em;
   --grid-outer-gutter: 1em;
 
   @media (min-width: $mq-md) {
-    --app-header-height: 6em;
+    --header-height: 5em;
   }
 }

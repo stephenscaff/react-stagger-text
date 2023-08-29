@@ -24,15 +24,7 @@ body {
 // Prevent Mobile Overflow
 //----------------------------------------------
 html {
-  @media (max-width: $mq-md) {
-    overflow-x: hidden;
-  }
-}
-
-html,
-body {
-  background-color: var(--color-dark);
-  color: var(--color-white);
+  overflow-x: hidden;
 }
 
 //----------------------------------------------
@@ -100,17 +92,10 @@ h5 {
 
 code {
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  @media (min-width: $mq-md) {
-    font-size: var(--font-size-sm);
-  }
+  @include font-sizer(var(--font-size-xs), $md: var(--font-size-sm));
 }
 
 li,
 p {
-  font-size: var(--font-size-sm);
-
-  @media (min-width: $mq-md) {
-    font-size: var(--font-size-md);
-  }
+  @include font-sizer(var(--font-size-sm), $md: var(--font-size-md));
 }

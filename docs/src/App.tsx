@@ -4,6 +4,7 @@ import Docs from './Docs'
 import DocsCode from './DocsCode'
 import DocsTable from './DocsTable'
 import DocsFooter from './DocsFooter'
+import DocsHeader from './DocsHeader'
 import StaggerText from '../../src'
 import HTMLParser from './HTMLParser'
 import data from './data/content.json'
@@ -12,7 +13,8 @@ export default function App() {
   return (
     <>
       {/* @ts-ignore */}
-      <DocsMast pretitle="React StaggerText" lines={data.mast.lines} />
+      <DocsHeader />
+      <DocsMast pretitle={data.mast.pretitle} lines={data.mast.lines} />
       <main>
         <Docs>
           <p>{data.intro.lead}</p>
@@ -45,21 +47,16 @@ export default function App() {
 
           <DocsCode language="tsx">
             {`import StaggerText from "react-stagger-text"
-  
-  function TextComponent() {
-    return (
-      <section className="mast">
-        <h1 className="mast__title">
-          <StaggerText
-            staggerDuration={0.7}
-            staggerDelay={0.09}
-          >
-            This text will be staggered by word
-          </StaggerText>
-        </h1>
-      </section>
-    )
-  }
+
+function SomeComponent() {
+  return (
+    <h1>
+      <StaggerText>
+        This text will be staggered by word
+      </StaggerText>
+    </h1>
+  )
+}
 `}
           </DocsCode>
           <h2 id={data.options.id} className="docs__title">
@@ -74,11 +71,10 @@ export default function App() {
           <DocsCode language="tsx">
             {`<StaggerText
   staggerType='letter'
-  staggerDuration={1}
-  shouldAnimate={true}
-  startDelay={10}
+  staggerDuration={0.4}
+  startDelay={0.04}
 >
-  Let's go ahead and stagger this by letter.
+ Let's go ahead and stagger this by letter.
 </StaggerText>
 `}
           </DocsCode>
@@ -86,43 +82,64 @@ export default function App() {
           <h5 className="docs__subtitle">Stagger with extended start delay</h5>
           <DocsCode language="tsx">{`<StaggerText
   staggerType='letter'
-  staggerDuration={1}
-  shouldAnimate={true}
-  startDelay={100}
+  staggerDuration={0.4}
+  startDelay={0.04}
+  startDelay={500}
 >
- Let's go ahead and stagger this by letter.
+ Let's go ahead and stagger this by letter with a start delay.
 </StaggerText>`}</DocsCode>
 
           <h5 className="docs__subtitle">Stagger with custom easing</h5>
           <DocsCode language="tsx">{`<StaggerText
   staggerType='letter'
-  staggerDuration={1}
   staggerEasing='cubic-bezier(0.4, 0, 0.2, 1)'
 >
-Stagger this text with custom easing
+ Stagger this text with custom easing
 </StaggerText>`}</DocsCode>
 
           <h5 className="docs__subtitle">Stagger with callback</h5>
           <DocsCode language="tsx">{`const handleStaggerEnd = () => {
-  console.log('stagger is dunzo')
+  console.log('sup ya'll, i'm dun')
 }
 
 <StaggerText
-  staggerDuration={1}
   onStaggerComplete={handleStaggerEnd}
 >
-  Stagger with a callback on stagger end
+  Stagger this text, then let em know
 </StaggerText>`}</DocsCode>
 
           <h5 className="docs__subtitle">
             Sequentially start stagger instances
           </h5>
-          <DocsCode language="tsx">{`const StaggeredTextLines: React.FC<Props> = (lines) => {
+          <DocsCode language="tsx">{`// Some data with titles and config
+const lines = [
+  {
+    title: "Stagger this first line by word",
+    staggerType: "word",
+    staggerDelay: 0.09,
+    staggerDuration: 0.7
+  },
+  {
+    title: "And, stagger this line by letter after the first.",
+    staggerType: "letter",
+    staggerDelay: 0.04,
+    staggerDuration: 0.4,
+    startDelay: 300
+  }
+  // etc
+]
+
+// Component
+import { useState } from 'react'
+
+const StaggeredTextLines: React.FC<Props> = (lines) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
+  // Callback handler
   const handleStaggerComplete = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1)
   }
+
   return (
     {lines.map((line, index) => (
       <StaggerText
@@ -138,8 +155,9 @@ Stagger this text with custom easing
       >
         {line.title}
       </StaggerText>
+    }
   )
-)}
+}
 `}</DocsCode>
 
           <h2 id={data.notes.id} className="docs__title">
