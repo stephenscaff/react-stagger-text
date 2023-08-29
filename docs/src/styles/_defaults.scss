@@ -100,5 +100,17 @@ h5 {
 
 code {
   font-family: var(--font-mono);
-  font-size: var(--font-size-code);
+  font-size: var(--font-size-xs);
+  @media (min-width: $mq-md) {
+    font-size: var(--font-size-sm);
+  }
+}
+
+li,
+p {
+  font-size: var(--font-size-sm);
+
+  @media (min-width: $mq-md) {
+    font-size: var(--font-size-md);
+  }
 }

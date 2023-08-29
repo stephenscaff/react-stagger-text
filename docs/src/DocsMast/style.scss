@@ -4,16 +4,16 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 40em;
   max-height: 100vh;
-  padding: 8em 0;
+  padding: var(--space-400) 0;
   color: #fff;
   background-color: var(--color-background);
   color: var(--color-text-light);
 
-  @media (min-width: 32em) {
+  @media (min-width: $mq-md) {
     height: 100vh;
     max-height: 100vh;
+    padding: var(--space-600) 0;
   }
 
   &__pretitle {
@@ -25,7 +25,7 @@
   }
 
   &__title {
-    font-size: var(--font-size-xl-3);
+    font-size: var(--font-size-xl-2);
     line-height: 1.25;
 
     @media (min-width: $mq-md) {
