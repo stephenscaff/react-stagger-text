@@ -4,6 +4,13 @@
   "description": "A React TS component for creating staggered text animation by word or letters, when in viewport",
   "author": "Stephen Scaff <stephenscaff.com>",
   "homepage": "https://stephenscaff.github.io/react-stagger-text/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stephenscaff/react-stagger-text"
+  },
+  "bugs": {
+    "url": "https://github.com/stephenscaff/react-stagger-text/issues"
+  },
   "license": "ISC",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -40,12 +47,12 @@
   },
   "keywords": [
     "react",
+    "react stagger text",
     "stagger",
-    "text",
-    "text",
-    "animation",
-    "text",
-    "effect"
+    "stagger text",
+    "stagger animation",
+    "text animation",
+    "text effect"
   ],
   "peerDependencies": {
     "react": "^18.0.0",
