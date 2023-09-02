@@ -18,7 +18,7 @@
     ]
   },
   "intro": {
-    "lead": "You like Staggered text animations? Well, then this plugin might be for you. StaggerText is a React plugin that transitions in text either word-by-word, or letter-by-letter, as the text enters viewport. Being a plugin and all, it has some options that we're gonna talk about... right now."
+    "lead": "You like Staggered text animations? Well, then this component might be for you. StaggerText is a React plugin that transitions in text either word-by-word, or letter-by-letter, as the text enters viewport. Being a plugin and all, it has some options that we're gonna talk about... right now."
   },
   "features": {
     "id": "features",
