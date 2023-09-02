@@ -17,7 +17,9 @@ export default function App() {
       <DocsMast pretitle={data.mast.pretitle} lines={data.mast.lines} />
       <main>
         <Docs>
-          <p>{data.intro.lead}</p>
+          <p>
+            <StaggerText>{data.intro.lead}</StaggerText>
+          </p>
 
           <h2 id={data.features.id} className="docs__title">
             <StaggerText staggerType="letter">
