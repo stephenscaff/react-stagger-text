@@ -24,7 +24,11 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 95%;
+    width: calc(100% - var(--grid-outer-gutter) * 2);
+
+    @media (min-width: $mq-md) {
+      width: 95%;
+    }
   }
 
   &__brand {

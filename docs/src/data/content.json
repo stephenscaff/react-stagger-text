@@ -3,13 +3,13 @@
     "pretitle": "Howdie!",
     "lines": [
       {
-        "title": "StaggerText is a React Component for creating staggered text animations when the text is in viewport. Animations can run by word, like this sentence.",
+        "title": "StaggerText is a React Component for creating staggered text animations when the text is in viewport. You can stagger by word, like this sentence.",
         "staggerType": "word",
         "staggerDelay": 0.09,
         "staggerDuration": 0.7
       },
       {
-        "title": "Or you can stagger text by letter, such as this example.",
+        "title": "Or you can stagger text by letter, like this.",
         "staggerType": "letter",
         "staggerDelay": 0.04,
         "staggerDuration": 0.4,

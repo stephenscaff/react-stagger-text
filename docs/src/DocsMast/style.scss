@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   max-height: 100vh;
-  padding: var(--space-400) 0;
+  padding: var(--space-600) 0 var(--space-400);
   background-color: var(--color-background);
   color: var(--color-text-light);
 
@@ -17,11 +17,15 @@
   }
 
   &__pretitle {
-    display: block;
+    display: none;
     font-weight: 600;
     font-size: var(--font-size-md);
     margin-bottom: var(--space-100);
     color: var(--color-accent-3);
+
+    @media (min-width: $mq-md) {
+      display: block;
+    }
   }
 
   &__title {
