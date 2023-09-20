@@ -34,7 +34,7 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "rollup -c",
-    "dev": "parcel ./docs/src/index.html --dist-dir ./dist",
+    "dev": "parcel ./docs/src/index.html --dist-dir ./docs/dist",
     "docs:clean": "rm -rf ./docs/dist",
     "docs:start": "parcel ./docs/src/index.html --dist-dir ./docs/dist",
     "docs:build": "parcel build ./docs/src/index.html --dist-dir ./docs/dist --public-url ./",
