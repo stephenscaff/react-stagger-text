@@ -32,17 +32,20 @@ const umdConfig = {
   output: [
     {
       file: pkg.main,
-      format: 'cjs'
+      format: 'cjs',
+      banner: "'use client';"
     },
     {
       file: pkg.module,
-      format: 'es'
+      format: 'es',
+      banner: "'use client';"
     },
     {
       file: pkg.browser,
       format: 'umd',
       name: 'StaggerText',
-      globals: umdGlobals
+      globals: umdGlobals,
+      banner: "'use client';"
     }
   ],
   plugins: [
