@@ -15,7 +15,7 @@ const StaggerText: React.FC<StaggerTextProps> = ({
   children
 }) => {
   const [animate, setAnimate] = useState(false)
-  const [completedTransitions, setCompletedTransitions] = useState(0)
+  //const [completedTransitions, setCompletedTransitions] = useState(0)
 
   const callback: IntersectionObserverCallback = (entries) => {
     if (entries[0].isIntersecting) {
@@ -34,17 +34,46 @@ const StaggerText: React.FC<StaggerTextProps> = ({
 
   const [textRef, observer] = useIO(callback, options, shouldStart)
 
-  const handleTransitionEnd = () => {
-    setCompletedTransitions((prevCount) => prevCount + 1)
-    if (completedTransitions === spans.length - 1) {
-      if (onStaggerComplete) {
-        onStaggerComplete()
-      }
+  // const handleTransitionEnd = () => {
+  //   setCompletedTransitions((prevCount) => prevCount + 1)
+  //   if (completedTransitions === spans.length - 1) {
+  //     if (onStaggerComplete) {
+  //       onStaggerComplete()
+  //     }
+  //   }
+  // }
+
+  // const handleTransitionEnd = () => {
+  //   setCompletedTransitions((prevCount) => {
+  //     const newCount = prevCount + 1
+  //     if (newCount === spans.length) {
+  //       if (onStaggerComplete) {
+  //         onStaggerComplete()
+  //       }
+  //     }
+  //     return newCount
+  //   })
+  // }
+
+  const handleTransitionEnd = (i: number) => {
+    if (i === spans.length - 1 && onStaggerComplete) {
+      onStaggerComplete()
     }
   }
 
+  // function getSpans(input: string): string[] {
+  //   return staggerType == 'word' ? input.split(' ') : [...input]
+  // }
+
   function getSpans(input: string): string[] {
-    return staggerType == 'word' ? input.split(' ') : [...input]
+    if (staggerType === 'word') {
+      return input.split(' ')
+    } else if (staggerType === 'letter') {
+      return [...input]
+    } else {
+      // Handle other cases if needed
+      return []
+    }
   }
 
   const spans = getSpans(children)
@@ -65,9 +94,9 @@ const StaggerText: React.FC<StaggerTextProps> = ({
             transitionTimingFunction: staggerEasing,
             opacity: animate ? 1 : 0
           }}
-          onTransitionEnd={handleTransitionEnd}
+          onTransitionEnd={() => handleTransitionEnd(i)}
         >
-          {item + (staggerType == 'word' ? ' ' : '')}
+          {item + (staggerType === 'word' && i < spans.length - 1 ? ' ' : '')}
         </span>
       ))}
     </span>
