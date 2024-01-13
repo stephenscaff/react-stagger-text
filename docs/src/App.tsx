@@ -12,7 +12,6 @@ import data from './data/content.json'
 export default function App() {
   return (
     <>
-      {/* @ts-ignore */}
       <DocsHeader />
       <DocsMast pretitle={data.mast.pretitle} lines={data.mast.lines} />
       <main>

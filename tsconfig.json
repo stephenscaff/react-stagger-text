@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
+    "target": "es2015",
     "jsx": "react-jsx",
     "moduleResolution": "node",
-    "target": "es5",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true
